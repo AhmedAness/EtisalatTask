@@ -28,6 +28,8 @@ import com.etisalat.sampletask.bases.Interface.BasePresenterListener;
 import com.etisalat.sampletask.bases.model.item;
 import com.etisalat.sampletask.bases.model.menu;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -62,7 +64,7 @@ public class Foods_Information extends BaseActivity implements MyRecyclerViewAda
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         Refresh=findViewById(R.id.Refresh);
         RefreshTime=findViewById(R.id.Refresh_Time);
-        RefreshTime.setText("asdasdasd");
+
         Refresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,6 +96,8 @@ public class Foods_Information extends BaseActivity implements MyRecyclerViewAda
                 adapter.setClickListener(Foods_Information.this);
                 recyclerView.setAdapter(adapter);
                 hideProgress();
+                Date currentTime = Calendar.getInstance().getTime();
+                RefreshTime.setText("Last Update :"+currentTime.getHours()+":"+currentTime.getMinutes());
 
             }
 
