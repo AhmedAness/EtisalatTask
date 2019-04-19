@@ -53,15 +53,27 @@
         android:id="@+id/Menu_Recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/Refresh"
         android:layout_below="@+id/my_toolbar"
         android:layout_marginBottom="-2dp" />
-    <Button
+
+    <android.support.design.widget.FloatingActionButton
         android:id="@+id/Refresh"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Refresh"
-        tools:ignore="MissingConstraints"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/refresh"
+        android:layout_margin="16dp"
+        android:layout_alignParentRight="true" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/Cap_Image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/refresh"
+        android:layout_margin="16dp"
+        android:layout_alignParentLeft="true" />
 
 </RelativeLayout>
