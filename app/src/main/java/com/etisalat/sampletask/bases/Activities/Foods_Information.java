@@ -29,6 +29,8 @@ import com.etisalat.sampletask.bases.model.item;
 import com.etisalat.sampletask.bases.model.menu;
 
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -92,13 +94,7 @@ public class Foods_Information extends BaseActivity implements MyRecyclerViewAda
             public void onResponse(Call<menu> call, Response<menu> response) {
                 menu menul = response.body();
                 items =menul.getItem();
-                adapter = new MyRecyclerViewAdapter(Foods_Information.this, items);
-                adapter.setClickListener(Foods_Information.this);
-                recyclerView.setAdapter(adapter);
-                hideProgress();
-                Date currentTime = Calendar.getInstance().getTime();
-                RefreshTime.setText("Last Update :"+currentTime.getHours()+":"+currentTime.getMinutes());
-
+                SortAndDisplay(items);
             }
 
             @Override
@@ -109,6 +105,26 @@ public class Foods_Information extends BaseActivity implements MyRecyclerViewAda
 
         });
     }
+
+    private void SortAndDisplay(List<item> items) {
+        if (items.size() > 0) {
+            Collections.sort(items, new Comparator<item>() {
+                @Override
+                public int compare(final item object1, final item object2) {
+                    return object1.getName().compareTo(object2.getName());
+                }
+            });
+
+            adapter = new MyRecyclerViewAdapter(Foods_Information.this, items);
+            adapter.setClickListener(Foods_Information.this);
+            recyclerView.setAdapter(adapter);
+            Date currentTime = Calendar.getInstance().getTime();
+            RefreshTime.setText("Last Update :"+currentTime.getHours()+":"+currentTime.getMinutes());
+            hideProgress();
+
+        }
+    }
+
 
     @Override
     public void onItemClick(View view, int position) {
