@@ -5,6 +5,7 @@ import com.etisalat.sampletask.bases.Interface.BasePresenterListener;
 
 public abstract class BasePresenter<T extends BaseController,
         E extends BasePresenterListener>
+
         implements BaseControllerListener {
 
     protected E listener;
