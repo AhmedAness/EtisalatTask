@@ -12,6 +12,10 @@ import com.etisalat.sampletask.bases.model.item;
 
 import java.util.List;
 
+/**
+ * @author ahmed aniss
+ * this is an adapter for the fragment recycler view
+ */
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
 
     private List<item> mData;

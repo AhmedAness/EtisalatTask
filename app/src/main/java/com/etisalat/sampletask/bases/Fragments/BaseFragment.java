@@ -1,4 +1,4 @@
-package com.etisalat.sampletask.bases;
+package com.etisalat.sampletask.bases.Fragments;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 
 import com.etisalat.sampletask.R;
+import com.etisalat.sampletask.bases.BasePresenter;
 import com.etisalat.sampletask.bases.Interface.BasePresenterListener;
 
 public abstract class BaseFragment<T extends BasePresenter> extends

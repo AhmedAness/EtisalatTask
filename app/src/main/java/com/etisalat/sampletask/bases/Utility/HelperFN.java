@@ -12,6 +12,10 @@ import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
 
+/**
+ * @author ahmed aniss
+ * this is an helper function class which contains function could be used in any other class
+ */
 public class HelperFN {
     private static HelperFN opj;
 
@@ -19,6 +23,13 @@ public class HelperFN {
     public static HelperFN getInstance(){
         return opj == null ? new HelperFN():opj;
     }
+
+    /**
+     *
+     * @param items
+     * @return sorted list of items
+     * this function is to sort list of items alphabetically
+     */
     public List<item> SortItemsbyalphabeticallyOrder(List<item> items) {
         if (items.size() > 0) {
             Collections.sort(items, new Comparator<item>() {
@@ -32,6 +43,14 @@ public class HelperFN {
         else throw new IllegalArgumentException("invalide length to sort");
     }
 
+    /**
+     *
+     * @param items
+     * @param lastUpdate
+     * @param mPrefs
+     *
+     * this function is to save data in shared pref
+     */
     public void Save_Data(List<item> items ,String lastUpdate,SharedPreferences mPrefs) {
 
 
@@ -45,6 +64,12 @@ public class HelperFN {
 
     }
 
+    /**
+     *
+     * @param mPrefs
+     * @return paire of list of items and last update time
+     * this fucnction is to get data from shared pref
+     */
     public CustomPair<List<item>,String> Get_Data(SharedPreferences mPrefs) {
 
             Gson gson = new Gson();

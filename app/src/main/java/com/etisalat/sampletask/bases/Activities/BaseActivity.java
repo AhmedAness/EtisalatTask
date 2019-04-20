@@ -1,4 +1,4 @@
-package com.etisalat.sampletask.bases;
+package com.etisalat.sampletask.bases.Activities;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.etisalat.sampletask.R;
+import com.etisalat.sampletask.bases.BasePresenter;
 import com.etisalat.sampletask.bases.Interface.BasePresenterListener;
 
 public abstract class BaseActivity<T extends BasePresenter>

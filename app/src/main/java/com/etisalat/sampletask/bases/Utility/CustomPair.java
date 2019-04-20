@@ -1,5 +1,11 @@
 package com.etisalat.sampletask.bases.Utility;
 
+/**
+ * @author ahmed aniss
+ * @param <T>
+ * @param <V>
+ *     this class is apair model class
+ */
 public class CustomPair<T,V> {
     T lift;
     V right;

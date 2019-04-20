@@ -50,13 +50,13 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <android.support.v7.widget.RecyclerView
-
-        android:id="@+id/Menu_Recycler"
+    <FrameLayout
+        android:id="@+id/FragmentLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/my_toolbar"
-        android:layout_marginBottom="-2dp" />
+        android:layout_below="@+id/my_toolbar">
+
+    </FrameLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/Refresh"
@@ -66,7 +66,7 @@
         android:layout_alignParentEnd="true"
         android:src="@drawable/refresh"
         android:layout_margin="16dp"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/Cap_Image"
@@ -76,6 +76,6 @@
         android:layout_alignParentStart="true"
         android:src="@drawable/capture"
         android:layout_margin="16dp"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"/>
 
 </RelativeLayout>
